@@ -1,8 +1,51 @@
-1. 앱 제목 : 메모장
+1. 리스트(dynamic array)
 
-2. 앱의 기능 : 제목과 내용을 입력하고 저장할 수 있다. 
+1.1 리스트의 종류
 
-3.소감: 평소 아이디, 비밀번호나 내일 할 걸 자꾸 까먹지만 메모장같은것을 잘 사용하지는 않습니다. 스스로 만들어보고 쓸 것 같습니다. 앱인벤터를 이용해 제대로 만들어보려고 했지만 블록부분에서 많이 막혔습니다. 그러다보니 자꾸 시간이 마뤄져 지금 올리게 되었습니다. 메모장 만드는 것도 스스로 해보려고 했지만 쉽지 않아서 인터넷을 참고해서 만들어 보았습니다. 조금 더 열심히 공부해서 스스로 만들어 보겠습니다. 늦게 올려 죄송합니다.
+1.1.1  single linked list
+노드당 다음노드를 알려주는 링크가 1개
+한방향으로밖에 이동 못함
+사진
 
+1.1.2 doubly linked list
+노드당 다음 노드를 알려주는 링크가 2개
+양방향으로 움직임이 가능
+사진
 
-![나만의 앱](https://github.com/gryrryfh/-/blob/master/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpg?raw=true)
+1.1.3 circular linked list
+마지막 노드가 처음 노드를 가르켜서 계속 순환할 수 있음 
+사진
+
+1.2 리스트의 예제
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct list {
+ int d;
+ struct list* p;
+} LIST;
+LIST* root = NULL;
+LIST* last = NULL;
+void AddList(int a){
+ LIST* r = (LIST*)malloc(sizeof(LIST));
+ r->d = a;
+ r->p = NULL;
+ if(root==NULL) root = r;
+ else           last->p = r;
+ last = r;
+}
+int main(void){
+ AddList(35);
+ AddList(40);
+ AddList(45);
+ while(root){
+  printf("%d\n", root->d);
+  root = root->p;
+ }
+}
+
+1.3 리스트와 배열의 차이
+인풋사이즈를 모를때 메모리 할당 효율 배열 < 리스트
+
+데이터 저장 값  배열 < 리스트
+
+중간 데이터 추가, 삭제 효율성 배열 < 리스트
