@@ -1,3 +1,19 @@
+### Youtube 링크
+
+https://youtu.be/xpp5GMU8USU
+
+### 회로도
+
+![10](https://user-images.githubusercontent.com/50912987/68826657-23ba2a00-06e2-11ea-9751-21efd3ac6bde.JPG)
+![11](https://user-images.githubusercontent.com/50912987/68826680-3af91780-06e2-11ea-8ef4-86c5db221bb0.JPG)
+
+* 인식거리가 너무 넓고 저항값이 부족하다 생각되어 1KΩ을 10kΩ으로 변경
+
+![12](https://user-images.githubusercontent.com/50912987/68826834-e1451d00-06e2-11ea-85d5-6b508b7ec267.jpg)
+
+
+### 소스코드
+
 ```
 #include <Servo.h>                        
 Servo servoLeft;                           
